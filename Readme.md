@@ -112,9 +112,10 @@ parser.set("server", "ip", Arrays.asList("127.0.0.1"));
 parser.set("server", "port", Arrays.asList("8080"));
 ```
 
+### 8. **Converting Data Types with `convertValue()`**
+
 > [!CAUTION]
 > Don't use this method until the next update or until I have removed this warning.
-### 8. **Converting Data Types with `convertValue()`**
 
 The `convertValue()` method is designed to convert string values into specific types, depending on the desired return type. This method is particularly useful when reading values from the configuration and converting them into usable data types (e.g., integers, booleans).
 
