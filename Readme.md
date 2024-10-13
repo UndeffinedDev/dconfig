@@ -84,7 +84,8 @@ To modify or add new configuration entries, use the `set()` method. This method 
 
 
 ```java 
-List<String> newHosts = Arrays.asList("localhost", "192.168.1.2"); parser.set("database", "hosts", newHosts);
+List<String> newHosts = Arrays.asList("localhost", "192.168.1.2");
+parser.set("database", "hosts", newHosts);
 ```
 
 #### 5. **Saving Changes to the File**
