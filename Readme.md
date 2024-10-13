@@ -47,7 +47,8 @@ You can read specific keys from sections using `getList()` or `get()`.
 - **Get a List of Values**: This method retrieves values for a key in a specific section. If the values are quoted (either single or double quotes), it will remove the quotes and return the cleaned values.
 
 ```java
-List<String> values = parser.getList("database", "hosts"); System.out.println(values);  // Output: [localhost, 192.168.1.1]
+List<String> values = parser.getList("database", "hosts");
+System.out.println(values);  // Output: [localhost, 192.168.1.1]
 ```
 
 - **Get a Single Value**: You can also retrieve a single value and convert it to the desired type, using `get()`:
@@ -74,7 +75,7 @@ if (parser.containsSection("database")) {
 
 ```java
 if (parser.containsKey("database", "host")) {     
-String host = parser.get("database", "host", "localhost");
+    String host = parser.get("database", "host", "localhost");
 }
 ```
 
@@ -107,7 +108,8 @@ If you need to add a completely new section to the configuration, use the `creat
 
 ```java 
 parser.createSection("server"); 
-parser.set("server", "ip", Arrays.asList("127.0.0.1")); parser.set("server", "port", Arrays.asList("8080"));
+parser.set("server", "ip", Arrays.asList("127.0.0.1"));
+parser.set("server", "port", Arrays.asList("8080"));
 ```
 
 #### 7. **Handling Errors**
