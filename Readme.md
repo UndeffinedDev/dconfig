@@ -40,7 +40,7 @@ public class Main {
 
 This will automatically attempt to load the configuration file if it exists and if it has the `.dconf` extension.
 
-#### 2. **Reading Data from the Configuration**
+#### 3. **Reading Data from the Configuration**
 
 You can read specific keys from sections using `getList()` or `get()`.
 
@@ -59,7 +59,7 @@ int port = parser.get("database", "port", 5432);
 boolean useSSL = parser.get("database", "useSSL", false);
 ```
 
-#### 3. **Checking for Sections or Keys**
+#### 4. **Checking for Sections or Keys**
 
 Before retrieving data, you may want to check if a section or key exists:
 
@@ -79,7 +79,7 @@ if (parser.containsKey("database", "host")) {
 }
 ```
 
-#### 4. **Modifying Data**
+#### 5. **Modifying Data**
 
 To modify or add new configuration entries, use the `set()` method. This method expects values in a list format, and it automatically wraps the values in quotes when saving.
 
@@ -89,7 +89,7 @@ List<String> newHosts = Arrays.asList("localhost", "192.168.1.2");
 parser.set("database", "hosts", newHosts);
 ```
 
-#### 5. **Saving Changes to the File**
+#### 6. **Saving Changes to the File**
 
 After modifying the configuration, you must save the changes to persist them in the `.dconf` file:
 
@@ -102,7 +102,7 @@ try {
 }
 ```
 
-#### 6. **Creating a New Section**
+#### 7. **Creating a New Section**
 
 If you need to add a completely new section to the configuration, use the `createSection()` method:
 
@@ -112,7 +112,7 @@ parser.set("server", "ip", Arrays.asList("127.0.0.1"));
 parser.set("server", "port", Arrays.asList("8080"));
 ```
 
-#### 7. **Handling Errors**
+#### 8. **Handling Errors**
 
 Make sure to handle potential exceptions when loading, saving, or manipulating the configuration. `InvalidFileException` may be thrown when loading files with incorrect extensions, and `IOException` may be encountered when working with file I/O operations.
 
