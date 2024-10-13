@@ -1,5 +1,8 @@
 > [!WARNING]
-> This project is in alpha phase and is a school prototype, so you may NOT find it as comfortable as other configuration files (yaml, toml, etc...) but I will try to improve it. 
+> This project is in alpha phase and is a school prototype, so you may NOT find it as comfortable as other configuration files (yaml, toml, etc...) but I will try to improve it.
+
+> [!CAUTION]
+> Don't use the convertValue() method at all, as it will be removed in the next update.
 
 #### Author:
 Sergio Caguana (UndeffinedDev)
@@ -111,23 +114,6 @@ parser.createSection("server");
 parser.set("server", "ip", Arrays.asList("127.0.0.1"));
 parser.set("server", "port", Arrays.asList("8080"));
 ```
-
-### 8. **Converting Data Types with `convertValue()`**
-
-> [!CAUTION]
-> Don't use this method until the next update or until I have removed this warning.
-
-The `convertValue()` method is designed to convert string values into specific types, depending on the desired return type. This method is particularly useful when reading values from the configuration and converting them into usable data types (e.g., integers, booleans).
-
-Here’s how to use `convertValue()`:
-
-
-```java
-int convertedValue = parser.convertValue("1234", 0);  // Returns an Integer object
-String stringValue = parser.convertValue("Hello", "");     // Returns a String object
-```
-
-The method will attempt to cast the string value into the specified class type, making it flexible for handling different types of data stored in the configuration file.
 
 #### 9. **Handling Errors**
 
