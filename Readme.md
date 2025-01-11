@@ -174,6 +174,7 @@ public class Example {
             
             // Save the changes
             parser.save();
+            System.out.println(config.get("database", "url", "default"));
         } catch (InvalidFileException | IOException e) {
             System.err.println("Error: " + e.getMessage());
         }
