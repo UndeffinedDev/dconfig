@@ -1,0 +1,10 @@
+[database]
+test = "Hola", "Mundo"
+port = 5432
+host = localhost
+version = 1.0
+url = http://${host}:${port}/${config.app_name}
+
+[config]
+app_name = "MyApp"
+
