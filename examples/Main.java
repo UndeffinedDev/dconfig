@@ -12,7 +12,6 @@ public class Main {
         try {
             DConfParser config = new DConfParser("default.dconf", StandardCharsets.UTF_8);
             System.out.println(config.get("database", "url", "default"));
-            config.save();
         } catch (InvalidFileException | RuntimeException | IOException e) {
             throw new RuntimeException(e);
         }
