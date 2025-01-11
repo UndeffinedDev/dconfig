@@ -1,9 +1,6 @@
 > [!WARNING]
 > This project is in alpha phase and is a school prototype, so you may NOT find it as comfortable as other configuration files (yaml, toml, etc...) but I will try to improve it.
 
-> [!CAUTION]
-> Don't use the convertValue() method at all, as it will be removed in the next update.
-
 #### Author:
 Sergio Caguana (UndeffinedDev)
 
@@ -113,6 +110,36 @@ If you need to add a completely new section to the configuration, use the `creat
 parser.createSection("server"); 
 parser.set("server", "ip", Arrays.asList("127.0.0.1"));
 parser.set("server", "port", Arrays.asList("8080"));
+```
+
+#### 8. **Using the values of other keys (interpolation)**
+
+This example shows how to use values from other keys in a configuration file by interpolation. The default.dconf configuration file contains variables and strings that reference other keys within the same file. In the [database] section, the url key uses the host and port values from the same section to form a dynamic URL. In addition, the app_name key in the [config] section is used to set the application name.
+
+DConfig Example File:
+```ini 
+[database]
+test = "Hola", "Mundo"
+port = 5432
+host = "localhost"
+version = 1.0
+url = "http://${host}:${port}/${config.app_name}"
+
+[config]
+app_name = "MyApp"
+```
+
+The Java code below demonstrates how to access these interpolated values through a parser that handles the configuration file and returns the URL constructed with the specified values.
+
+```java
+    public static void main(String[] args) {
+        try {
+            DConfParser config = new DConfParser("default.dconf", StandardCharsets.UTF_8);
+            System.out.println(config.get("database", "url", "default"));
+        } catch (InvalidFileException | RuntimeException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 ```
 
 #### 9. **Handling Errors**
