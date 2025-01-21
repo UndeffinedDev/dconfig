@@ -137,6 +137,7 @@ The Java code below demonstrates how to access these interpolated values through
         try {
             DConfParser config = new DConfParser("default.dconf", StandardCharsets.UTF_8);
             System.out.println(config.get("database", "url", "default"));
+            System.out.println(config.get("database", "java_version", "default"));
         } catch (InvalidFileException | RuntimeException | IOException e) {
             throw new RuntimeException(e);
         }
