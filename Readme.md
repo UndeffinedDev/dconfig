@@ -118,12 +118,13 @@ This example shows how to use values from other keys in a configuration file by 
 
 DConfig Example File:
 ```ini 
+# Database values
 [database]
-test = "Hola", "Mundo"
 port = 5432
 host = "localhost"
+java_version = "The Java vendor name is ${property.java.vendor} version is ${property.java.version} and the OS is ${property.os.name}"
 version = 1.0
-url = "http://${host}:${port}/${config.app_name}"
+url = "http://${host}:${port}/${config.app_name}?username=${env.USERNAME}"
 
 [config]
 app_name = "MyApp"
