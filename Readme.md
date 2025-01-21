@@ -1,6 +1,9 @@
 > [!WARNING]
 > This project is in alpha phase and is a school prototype, so you may NOT find it as comfortable as other configuration files (yaml, toml, etc...) but I will try to improve it.
 
+> [!IMPORTANT]  
+> Please note that some methods have not yet been listed here. The wiki is currently being migrated to GitBook.
+
 #### Author:
 Sergio Caguana (UndeffinedDev)
 
